@@ -1,0 +1,9 @@
+# executable files
+.exe
+goiptv-cli
+
+# macOS
+.DS_Store
+
+# data
+data*

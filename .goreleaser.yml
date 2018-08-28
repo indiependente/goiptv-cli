@@ -3,6 +3,10 @@
 builds:
 - 
   binary: goiptv
+  goos:
+    - darwin
+    - linux
+    - windows
   goarch:
     - 386
     - amd64

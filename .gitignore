@@ -7,3 +7,6 @@ goiptv-cli
 
 # data
 data*
+
+# binaries
+dist*

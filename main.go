@@ -34,4 +34,9 @@ func main() {
 		ioutil.WriteFile(fmt.Sprintf(folderName+"/iptv%d.m3u", i), data, 0644)
 	}
 	log.WithFields(log.Fields{"seconds": time.Since(start).Seconds()}).Debug("time elapsed")
+	plural := ""
+	if i > 1 {
+		plural = "s"
+	}
+	fmt.Printf("\nSuccessfully retrieved %d m3u playlist%s!\n", i, plural)
 }

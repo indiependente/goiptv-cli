@@ -27,12 +27,16 @@ func main() {
 	for r := range readers {
 		data, err := ioutil.ReadAll(r)
 		if err != nil {
-			fmt.Fprintf(os.Stderr, "Could not read from reader: %v", err)
+			log.WithFields(log.Fields{"error": err}).Error("Could not read from reader")
 		}
 		log.WithFields(log.Fields{"bytes": len(data)}).Debug("bytes received")
 		i++
-		ioutil.WriteFile(fmt.Sprintf(folderName+"/iptv%d.m3u", i), data, 0644)
+		err = ioutil.WriteFile(fmt.Sprintf(folderName+"/iptv%d.m3u", i), data, 0644)
+		if err != nil {
+			log.WithFields(log.Fields{"error": err}).Error("Could not write file")
+		}
 	}
+
 	log.WithFields(log.Fields{"seconds": time.Since(start).Seconds()}).Debug("time elapsed")
 	plural := ""
 	if i > 1 {

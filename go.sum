@@ -28,6 +28,8 @@ github.com/indiependente/goiptv v1.0.2 h1:QrxTf4vnlgUOrM2cQmlk3YWzZFb1hDjQqgJw6B
 github.com/indiependente/goiptv v1.0.2/go.mod h1:JPfYUq8kd2SiANenHuv5G1VyBR0oFLaPbZBbg6lV1Mo=
 github.com/indiependente/gospinner v0.0.0-20180828154014-b1bab09f4164 h1:IxFH8mlHEjTqzkk2poPjm8/l/p116LBQQgBc+s2VkVA=
 github.com/indiependente/gospinner v0.0.0-20180828154014-b1bab09f4164/go.mod h1:bMgWAB+pyvH3+aXoGqPAifT9QldlzZvU5P94OREyPqo=
+github.com/jessevdk/go-flags v1.4.0 h1:4IU2WS7AumrZ/40jfhf4QVDMsQwqA7VEHozFRrGARJA=
+github.com/jessevdk/go-flags v1.4.0/go.mod h1:4FA24M0QyGHXBuZZK/XkWh8h0e1EYbRYJSGM75WSRxI=
 github.com/kennygrant/sanitize v1.2.4 h1:gN25/otpP5vAsO2djbMhF/LQX6R7+O1TB4yv8NzpJ3o=
 github.com/kennygrant/sanitize v1.2.4/go.mod h1:LGsjYYtgxbetdg5owWB2mpgUL6e2nfw2eObZ0u0qvak=
 github.com/onsi/ginkgo v1.6.0 h1:Ix8l273rp3QzYgXSR+c8d1fTG7UPgYkOSELPhiY/YGw=

@@ -6,20 +6,21 @@ import (
 	"os"
 	"time"
 
-	"github.com/indiependente/goiptv"
+	"github.com/indiependente/goiptv/v2"
 	"github.com/indiependente/gospinner"
 	flags "github.com/jessevdk/go-flags"
 	log "github.com/sirupsen/logrus"
 )
 
 var opts struct {
+	TimeSpan string   `short:"t" long:"timespan" description:"The timespan in which to search for playlists. Allowed values are: \"H\" (last hour) \"D\" (last day) \"W\" (last week)" default:"D" optional:"yes" choice:"H" choice:"D" choice:"W"`
 	Channels []string `short:"c" long:"channel" description:"A list of tv channels" default:"sky calcio"`
 	Debug    bool     `short:"d" long:"debug" description:"Run program with debug information turned on" optional:"yes"`
 }
 
 func main() {
 
-	numPlaylists, timeElapsed := scrapeChannels(opts.Channels)
+	numPlaylists, timeElapsed := scrapeChannels(opts.Channels, opts.TimeSpan)
 
 	log.WithFields(log.Fields{"seconds": timeElapsed}).Debug("time elapsed")
 	plural := ""
@@ -29,12 +30,15 @@ func main() {
 	fmt.Printf("\nSuccessfully retrieved %d m3u playlist%s!\n", numPlaylists, plural)
 }
 
-func scrapeChannels(channels []string) (int, float64) {
+func scrapeChannels(channels []string, timeSpan string) (int, float64) {
 	start := time.Now()
 	var i int
+
+	iptvScraper := goiptv.NewIPTVScraper(timeSpan)
+
 	for _, c := range channels {
 		log.WithFields(log.Fields{"channel": c}).Debug("search")
-		readers := goiptv.ScrapeAll("extinf " + c)
+		readers := iptvScraper.ScrapeAll("extinf " + c)
 		folderName := "data_" + start.Format("2006-01-02")
 
 		_ = os.Mkdir(folderName, 0755)

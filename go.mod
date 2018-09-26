@@ -2,7 +2,8 @@ module github.com/indiependente/goiptv-cli
 
 require (
 	github.com/gocolly/colly v1.1.0 // indirect
-	github.com/indiependente/goiptv v1.0.3
+	github.com/indiependente/goiptv v1.0.3 // indirect
+	github.com/indiependente/goiptv/v2 v2.0.0
 	github.com/indiependente/gospinner v0.0.0-20180828154014-b1bab09f4164
 	github.com/jessevdk/go-flags v1.4.0
 	github.com/kr/pretty v0.1.0 // indirect

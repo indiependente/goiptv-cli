@@ -22,10 +22,10 @@ github.com/golang/protobuf v1.2.0 h1:P3YflyNX/ehuJFLhxviNdFxQPkGK5cDcApsge1SqnvM
 github.com/golang/protobuf v1.2.0/go.mod h1:6lQm79b+lXiMfvg/cZm0SGofjICqVBUtrP5yJMmIC1U=
 github.com/hpcloud/tail v1.0.0 h1:nfCOvKYfkgYP8hkirhJocXT2+zOD8yUNjXaWfTlyFKI=
 github.com/hpcloud/tail v1.0.0/go.mod h1:ab1qPbhIpdTxEkNHXyeSf5vhxWSCs/tWer42PpOxQnU=
-github.com/indiependente/goiptv v1.0.2 h1:QrxTf4vnlgUOrM2cQmlk3YWzZFb1hDjQqgJw6BHxYp0=
-github.com/indiependente/goiptv v1.0.2/go.mod h1:JPfYUq8kd2SiANenHuv5G1VyBR0oFLaPbZBbg6lV1Mo=
 github.com/indiependente/goiptv v1.0.3 h1:B/9mBw/WyjISB3F98bM5VlIEyn7CcZ5NzSB0o3tlorQ=
 github.com/indiependente/goiptv v1.0.3/go.mod h1:JPfYUq8kd2SiANenHuv5G1VyBR0oFLaPbZBbg6lV1Mo=
+github.com/indiependente/goiptv/v2 v2.0.0 h1:eoGANzUMtn5svWRmikz298hXKPRX4hPLLeopOcQ/tIk=
+github.com/indiependente/goiptv/v2 v2.0.0/go.mod h1:tRTYfGAOkGnQmbdosRLBug7PUuyopIFZh8IDMxU/Dg4=
 github.com/indiependente/gospinner v0.0.0-20180828154014-b1bab09f4164 h1:IxFH8mlHEjTqzkk2poPjm8/l/p116LBQQgBc+s2VkVA=
 github.com/indiependente/gospinner v0.0.0-20180828154014-b1bab09f4164/go.mod h1:bMgWAB+pyvH3+aXoGqPAifT9QldlzZvU5P94OREyPqo=
 github.com/jessevdk/go-flags v1.4.0 h1:4IU2WS7AumrZ/40jfhf4QVDMsQwqA7VEHozFRrGARJA=
@@ -62,8 +62,6 @@ golang.org/x/sync v0.0.0-20180314180146-1d60e4601c6f h1:wMNYb4v58l5UBM7MYRLPG6Zh
 golang.org/x/sync v0.0.0-20180314180146-1d60e4601c6f/go.mod h1:RxMgew5VJxzue5/jJTE5uejpjVlOe/izrB70Jof72aM=
 golang.org/x/sys v0.0.0-20180824143301-4910a1d54f87 h1:GqwDwfvIpC33dK9bA1fD+JiDUNsuAiQiEkpHqUKze4o=
 golang.org/x/sys v0.0.0-20180824143301-4910a1d54f87/go.mod h1:STP8DvDyc/dI5b8T5hshtkjS+E42TnysNCUPdjciGhY=
-golang.org/x/sys v0.0.0-20180828065106-d99a578cf41b h1:cmOZLU2i7CLArKNViO+ZCQ47wqYFyKEIpbGWp+b6Uoc=
-golang.org/x/sys v0.0.0-20180828065106-d99a578cf41b/go.mod h1:STP8DvDyc/dI5b8T5hshtkjS+E42TnysNCUPdjciGhY=
 golang.org/x/sys v0.0.0-20180831094639-fa5fdf94c789 h1:T8D7l6WB3tLu+VpKvw06ieD/OhBi1XpJmG1U/FtttZg=
 golang.org/x/sys v0.0.0-20180831094639-fa5fdf94c789/go.mod h1:STP8DvDyc/dI5b8T5hshtkjS+E42TnysNCUPdjciGhY=
 golang.org/x/text v0.3.0 h1:g61tztE5qeGQ89tm6NTjjM9VPIm088od1l6aSorWRWg=

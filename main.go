@@ -4,11 +4,13 @@ import (
 	"fmt"
 	"io/ioutil"
 	"os"
+	"strings"
 	"time"
 
 	"github.com/indiependente/goiptv/v2"
 	"github.com/indiependente/gospinner"
 	flags "github.com/jessevdk/go-flags"
+	. "github.com/logrusorgru/aurora"
 	log "github.com/sirupsen/logrus"
 )
 
@@ -35,7 +37,11 @@ func main() {
 	if numPlaylists > 1 {
 		plural = "s"
 	}
-	fmt.Printf("\nSuccessfully retrieved %d m3u playlist%s!\n", numPlaylists, plural)
+	if numPlaylists == 0 {
+		fmt.Println(Red("\nNo playlists found! ⛔️").Bold())
+	} else {
+		fmt.Println(Sprintf(Bold("\nSuccessfully downloaded %d playlist%s in %.2f seconds! ⚡️"), Green(numPlaylists), plural, Blue(timeElapsed)))
+	}
 }
 
 func scrapeChannels(channels []string, timeSpan string) (int, float64) {
@@ -51,7 +57,7 @@ func scrapeChannels(channels []string, timeSpan string) (int, float64) {
 
 		_ = os.Mkdir(folderName, 0755)
 		go spinner.Spin(os.Stdout, 100*time.Millisecond)
-		fmt.Print("  Scraping and generating playlists... ")
+		fmt.Print("  Scraping and generating playlists... 🧐")
 
 		for r := range readers {
 			data, err := ioutil.ReadAll(r)
@@ -84,14 +90,15 @@ func init() {
 	}
 
 	if opts.Debug {
-		fmt.Printf("Debug mode active\n")
+		fmt.Println(Cyan("Debug mode active"))
 		log.SetLevel(log.DebugLevel)
 	} else {
 		log.SetLevel(log.ErrorLevel)
 	}
 	log.SetFormatter(&log.JSONFormatter{})
-	if opts.Channels == nil {
-		fmt.Printf("No tv channel argument provided. Defaults research to Sky Calcio\n")
+
+	if len(opts.Channels) == 1 && strings.EqualFold(opts.Channels[0], "") {
+		fmt.Println(Brown("No tv channel argument provided. Defaults research to EXTINF. 🤓"))
 	}
 
 }

@@ -67,7 +67,6 @@ func init() {
 
 	_, err := flags.Parse(&opts)
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Could not parse arguments: %v", err)
 		os.Exit(1)
 	}
 	if opts.Debug {

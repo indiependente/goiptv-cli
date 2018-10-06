@@ -12,10 +12,16 @@ import (
 	log "github.com/sirupsen/logrus"
 )
 
+const (
+	BINARYNAME = "goiptv-cli"
+	VERSION    = "v1.1.2"
+)
+
 var opts struct {
 	TimeSpan string   `short:"t" long:"timespan" description:"The timespan in which to search for playlists. Allowed values are: \"H\" (last hour) \"D\" (last day) \"W\" (last week)" default:"D" optional:"yes" choice:"H" choice:"D" choice:"W"`
 	Channels []string `short:"c" long:"channel" description:"A list of tv channels" default:"sky calcio"`
 	Debug    bool     `short:"d" long:"debug" description:"Run program with debug information turned on" optional:"yes"`
+	Version  bool     `short:"v" long:"version" description:"Shows the program version" optional:"yes"`
 }
 
 func main() {
@@ -69,6 +75,12 @@ func init() {
 	if err != nil {
 		os.Exit(1)
 	}
+
+	if opts.Version {
+		fmt.Printf("%s %s\n", BINARYNAME, VERSION)
+		os.Exit(0)
+	}
+
 	if opts.Debug {
 		fmt.Printf("Debug mode active\n")
 		log.SetLevel(log.DebugLevel)

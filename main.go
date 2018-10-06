@@ -13,8 +13,10 @@ import (
 )
 
 const (
+	// BINARYNAME is the name of the binary.
 	BINARYNAME = "goiptv-cli"
-	VERSION    = "v1.1.2"
+	// BINARYVERSION is the version of the binary.
+	BINARYVERSION = "v1.1.3"
 )
 
 var opts struct {
@@ -77,7 +79,7 @@ func init() {
 	}
 
 	if opts.Version {
-		fmt.Printf("%s %s\n", BINARYNAME, VERSION)
+		fmt.Printf("%s %s\n", BINARYNAME, BINARYVERSION)
 		os.Exit(0)
 	}
 

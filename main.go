@@ -16,7 +16,7 @@ const (
 	// BINARYNAME is the name of the binary.
 	BINARYNAME = "goiptv-cli"
 	// BINARYVERSION is the version of the binary.
-	BINARYVERSION = "v1.1.2"
+	BINARYVERSION = "v1.1.3"
 )
 
 var opts struct {

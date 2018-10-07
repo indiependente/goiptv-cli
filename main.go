@@ -10,7 +10,7 @@ import (
 	"github.com/indiependente/goiptv/v2"
 	"github.com/indiependente/gospinner"
 	flags "github.com/jessevdk/go-flags"
-	. "github.com/logrusorgru/aurora"
+	au "github.com/logrusorgru/aurora"
 	log "github.com/sirupsen/logrus"
 )
 
@@ -38,9 +38,9 @@ func main() {
 		plural = "s"
 	}
 	if numPlaylists == 0 {
-		fmt.Println(Red("\nNo playlists found! ⛔️").Bold())
+		fmt.Println(au.Red("\nNo playlists found! ⛔️").Bold())
 	} else {
-		fmt.Println(Sprintf(Bold("\nSuccessfully downloaded %d playlist%s in %.2f seconds! ⚡️"), Green(numPlaylists), plural, Blue(timeElapsed)))
+		fmt.Println(au.Sprintf(au.Bold("\nSuccessfully downloaded %d playlist%s in %.2f seconds! ⚡️"), au.Green(numPlaylists), plural, au.Blue(timeElapsed)))
 	}
 }
 
@@ -90,7 +90,7 @@ func init() {
 	}
 
 	if opts.Debug {
-		fmt.Println(Cyan("Debug mode active"))
+		fmt.Println(au.Cyan("Debug mode active"))
 		log.SetLevel(log.DebugLevel)
 	} else {
 		log.SetLevel(log.ErrorLevel)
@@ -98,7 +98,7 @@ func init() {
 	log.SetFormatter(&log.JSONFormatter{})
 
 	if len(opts.Channels) == 1 && strings.EqualFold(opts.Channels[0], "") {
-		fmt.Println(Brown("No tv channel argument provided. Defaults research to EXTINF. 🤓"))
+		fmt.Println(au.Brown("No tv channel argument provided. Defaults research to EXTINF. 🤓"))
 	}
 
 }

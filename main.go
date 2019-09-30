@@ -98,6 +98,8 @@ func scrapeChannels(channels []string, timeSpan string) ([][]byte, error) {
 		return nil, errors.Wrap(err, "could not scrape channels")
 	}
 
+	close(dataCh)
+
 	for d := range dataCh {
 		content = append(content, d)
 	}
@@ -107,10 +109,7 @@ func scrapeChannels(channels []string, timeSpan string) ([][]byte, error) {
 
 func persist(playlists [][]byte) error {
 	folderName := "data_" + time.Now().Format("2006-01-02")
-	err := os.Mkdir(folderName, 0755)
-	if err != nil {
-		return errors.Wrap(err, "could not create folder")
-	}
+	_ = os.Mkdir(folderName, 0755) // create and ignore issues
 	for i, p := range playlists {
 		err := ioutil.WriteFile(fmt.Sprintf(folderName+"/iptv%d.m3u", i), p, 0644)
 		if err != nil {

@@ -10,6 +10,7 @@ data*
 
 # binaries
 dist*
+bin*
 
 # IDE specific
 .vscode*

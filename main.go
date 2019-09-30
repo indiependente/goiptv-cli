@@ -98,6 +98,10 @@ func scrapeChannels(channels []string, timeSpan string) ([][]byte, error) {
 		return nil, errors.Wrap(err, "could not scrape channels")
 	}
 
+	for d := range dataCh {
+		content = append(content, d)
+	}
+
 	return content, nil
 }
 
